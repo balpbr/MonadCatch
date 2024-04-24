@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(61, 61, 61);
+    font-family: "Oswald", sans-serif;
+}
+
+.overlay {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.game-text {
+    font-size: 100px;
+    color: rgb(114, 114, 114);
+    user-select: none;
+}
+
+.dev-text {
+    font-size: 200px;
+    color: rgb(114, 114, 114);
+    user-select: none;
+}
