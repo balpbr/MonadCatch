@@ -46,3 +46,10 @@ body {
     height: 30px;
     width: 30px;
 }
+
+.score {
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: 75px;
+    color: rgb(114, 114, 114);
+}
