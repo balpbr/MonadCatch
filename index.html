@@ -6,7 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-        <title> Redstone Catching</title>
+        <title>Redstone Catching</title>
     </head>
     <body>
         <div class="background">
@@ -19,11 +19,19 @@
             </div>
         </div>
 
-        <div class="overlay">
-            <canvas class="board" height = "500px" width = "1000px"></canvas>
-        </div>
 
-        <script src="scripts/board.js"></script>
+        <div class="overlay2">
+            <div class="board"></div>
+        </div>
+        
+        <div class="overlay">
+            <canvas class="canvas" height = "500px" width = "1000px"></canvas>
+        </div>
+    
+
+
+        <script src="scripts/player.js"></script>
         <script src="scripts/movement.js"></script>
+        <script src="scripts/points.js"></script>
     </body>
 </html>

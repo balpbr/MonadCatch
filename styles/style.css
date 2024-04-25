@@ -4,7 +4,8 @@ body {
 }
 
 .background,
-.overlay {
+.overlay,
+.overlay2 {
     position: absolute;
     display: flex;
     align-items: center;
@@ -28,8 +29,20 @@ body {
     user-select: none;
 }
 
-.board {
+.canvas {
     border-bottom-color:rgb(175, 175, 175);
     border-bottom-width: 30px;
     border-bottom-style: solid;
+}
+
+.board {
+    position: relative;
+    height: 500px;
+    width: 1000px;
+}
+
+.block {
+    position: absolute;
+    height: 30px;
+    width: 30px;
 }
