@@ -3,6 +3,7 @@ body {
     font-family: "Oswald", sans-serif;
 }
 
+.background,
 .overlay {
     position: absolute;
     display: flex;
@@ -25,4 +26,10 @@ body {
     font-size: 200px;
     color: rgb(114, 114, 114);
     user-select: none;
+}
+
+.board {
+    border-bottom-color:rgb(175, 175, 175);
+    border-bottom-width: 30px;
+    border-bottom-style: solid;
 }
