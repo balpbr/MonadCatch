@@ -6,6 +6,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <title>Redstone Catching</title>
     </head>
     <body>
@@ -13,7 +16,7 @@
             0
         </div>
 
-        <div class="background">
+        <div class="overlay-background">
             <div class="game-text">
                 REDSTONE CATCHING
             </div>
@@ -24,15 +27,17 @@
         </div>
 
 
-        <div class="overlay2">
+        <div class="overlay-board">
             <div class="board"></div>
         </div>
         
-        <div class="overlay">
+        <div class="overlay-canvas">
             <canvas class="canvas" height = "500px" width = "1000px"></canvas>
         </div>
-    
 
+        <div class="overlay-start">
+            <button class="start-button"><i class="fa-solid fa-circle-play"></i></button>
+        </div>
 
         <script src="scripts/player.js"></script>
         <script src="scripts/movement.js"></script>
