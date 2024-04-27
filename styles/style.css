@@ -85,20 +85,25 @@ body {
 }
 
 .color-theme {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     font-size: 40px;
-    border-radius: 10px;
+    border-radius: 15px;
     border-style: solid;
-    border-color: green;
+    border-color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
 
     transition: opacity 0.15s;
 }
 
 .color-theme:hover {
-    background-color: green;
+    opacity: 0.8;
 }
 
 .color-theme:active {
     opacity: 0.5;
 }
+
