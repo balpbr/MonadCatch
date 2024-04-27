@@ -4,7 +4,9 @@ const startButton = document.querySelector(".start-button");
 const timer = document.querySelector(".timer");
 startButton.addEventListener("click", ()=>{
     play = true;
-    let stopPlaying = setInterval(spawnBlock, 1000);
+    let stopPlaying = setInterval(()=>{
+        spawnBlock(0);
+    }, 1000);
     startButton.style.display = "none";
     score = 0;
     const scoreText = document.querySelector(".score");
@@ -29,15 +31,26 @@ startButton.addEventListener("click", ()=>{
 
 let score = 0;
 
-function spawnBlock(){
+function spawnBlock(integration){
     if(play === true){
-        const block = document.createElement("div");
+        let boostChance = Math.floor(Math.random() * 2);
+
+        const block = document.createElement("img");
         block.classList.add("block");
+        if(integration === 0){
+            if(boostChance === 1) {
+                block.src = "images/ethereum.png";
+            } else {
+                block.src = "images/point.png";
+            }
+        } else {
+            block.src = "images/integrations/blast.png";
+            boostChance = 0;
+        }
+
         const blockParent = document.querySelector(".board");
         
         blockParent.appendChild(block);
-        
-        block.style.backgroundColor = "white";
         
         let x2 = Math.floor(Math.random() * (canvas.width - 50));
         block.style.left = `${x2}px`;
@@ -55,7 +68,7 @@ function spawnBlock(){
                     clearInterval(blockInterval);
                 }, 1000)
             }
-            checkIfPlayerTouch(x2, y2, block, blockInterval);
+            checkIfPlayerTouch(x2, y2, block, blockInterval, boostChance);
         
             if(!grounded2){
                 vy2 += 0.005;
@@ -68,7 +81,7 @@ function spawnBlock(){
 }
 spawnBlock();
 
-function checkIfPlayerTouch(xBlock, yBlock, blockElement, blockInterval){
+function checkIfPlayerTouch(xBlock, yBlock, blockElement, blockInterval, boost){
     if(yBlock + 25 >= y && yBlock <= y + 50){
         if(xBlock + 25 >= x && xBlock <= x + 50){
             blockElement.remove();
@@ -76,6 +89,18 @@ function checkIfPlayerTouch(xBlock, yBlock, blockElement, blockInterval){
             score++;
             const scoreText = document.querySelector(".score");
             scoreText.innerHTML = `${score}`;
+
+            if(boost === 1) {
+                let i2 = 0;
+                let stopBoost = setInterval(()=>{
+                    if(i2 === 5) {
+                        clearInterval(stopBoost);
+                    }
+                    spawnBlock(1);
+                    i2++;
+                }, 500)
+
+            }
         }
     }
 }
