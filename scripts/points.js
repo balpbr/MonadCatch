@@ -33,7 +33,7 @@ let score = 0;
 
 function spawnBlock(integration){
     if(play === true){
-        let boostChance = Math.floor(Math.random() * 2);
+        let boostChance = Math.floor(Math.random() * 10);
 
         const block = document.createElement("img");
         block.classList.add("block");
@@ -44,7 +44,8 @@ function spawnBlock(integration){
                 block.src = "images/point.png";
             }
         } else {
-            block.src = "images/integrations/blast.png";
+            let randomLogo = Math.floor(Math.random() * 17);
+            block.src = `images/integrations/logo${randomLogo}.png`;
             boostChance = 0;
         }
 
