@@ -24,10 +24,26 @@ body {
     user-select: none;
 }
 
-.dev-text {
+.stats-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 100px;
+}
+
+.score,
+.timer {
     font-size: 200px;
     color: rgb(114, 114, 114);
     user-select: none;
+}
+
+.dev-text {
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: 75px;
+    color: rgb(114, 114, 114);
 }
 
 .canvas {
@@ -48,21 +64,14 @@ body {
     width: 30px;
 }
 
-.score {
-    margin-top: 50px;
-    margin-left: 50px;
-    font-size: 75px;
-    color: rgb(114, 114, 114);
-}
-
 .start-button {
     width: 90px;
     height: 90px;
-    font-family: "Oswald", sans-serif;
     font-size: 40px;
     border-radius: 10px;
     border-style: solid;
     border-color: white;
+    cursor: pointer;
 
     transition: opacity 0.15s;
 }
@@ -72,5 +81,24 @@ body {
 }
 
 .start-button:active {
+    opacity: 0.5;
+}
+
+.color-theme {
+    width: 90px;
+    height: 90px;
+    font-size: 40px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: green;
+
+    transition: opacity 0.15s;
+}
+
+.color-theme:hover {
+    background-color: green;
+}
+
+.color-theme:active {
     opacity: 0.5;
 }

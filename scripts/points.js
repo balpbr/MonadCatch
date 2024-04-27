@@ -1,12 +1,31 @@
 let play = false;
 
 const startButton = document.querySelector(".start-button");
+const timer = document.querySelector(".timer");
 startButton.addEventListener("click", ()=>{
     play = true;
+    let stopPlaying = setInterval(spawnBlock, 1000);
     startButton.style.display = "none";
+    score = 0;
+    const scoreText = document.querySelector(".score");
+    scoreText.innerHTML = `${score}`;
+    timer.innerHTML = 60;
+
+    let i = 60;
+    let stopTimer = setInterval(()=>{
+        i--;
+        timer.innerHTML = `${i}`;
+        if(i === 0) {
+            play = false;
+            clearInterval(stopPlaying);
+            clearInterval(stopTimer);
+            startButton.style.display = "initial";
+            vx = 0;
+        }
+    }, 1000)
 });
 
-setInterval(spawnBlock, 1000);
+
 
 let score = 0;
 
