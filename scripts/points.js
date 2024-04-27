@@ -13,6 +13,8 @@ startButton.addEventListener("click", ()=>{
     scoreText.innerHTML = `${score}`;
     timer.innerHTML = 60;
 
+    x = 475;
+
     let i = 60;
     let stopTimer = setInterval(()=>{
         i--;
@@ -83,8 +85,8 @@ function spawnBlock(integration){
 spawnBlock();
 
 function checkIfPlayerTouch(xBlock, yBlock, blockElement, blockInterval, boost){
-    if(yBlock + 25 >= y && yBlock <= y + 50){
-        if(xBlock + 25 >= x && xBlock <= x + 50){
+    if(yBlock + POINT_HEIGHT >= y && yBlock <= y + PLAYER_HEIGHT){
+        if(xBlock + POINT_WIDTH >= x && xBlock <= x + PLAYER_WIDTH){
             blockElement.remove();
             clearInterval(blockInterval);
             score++;
