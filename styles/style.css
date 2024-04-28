@@ -130,3 +130,11 @@ body {
 .github-link:active {
     opacity: 0.5;
 }
+
+.version {
+    font-size: 30px;
+    color: rgb(175, 175, 175);
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
