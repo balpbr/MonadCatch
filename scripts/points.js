@@ -19,7 +19,7 @@ startButton.addEventListener("click", ()=>{
 
     x = 475;
 
-    let i = 10;
+    let i = 60;
     let stopTimer = setInterval(()=>{
         i--;
         timer.innerHTML = `${i}`;
