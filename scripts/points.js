@@ -1,4 +1,5 @@
 let play = false;
+let sound = new Audio("audio/point_collecting.flac");
 
 const startButton = document.querySelector(".start-button");
 const timer = document.querySelector(".timer");
@@ -10,12 +11,15 @@ startButton.addEventListener("click", ()=>{
     startButton.style.display = "none";
     score = 0;
     const scoreText = document.querySelector(".score");
-    scoreText.innerHTML = `${score}`;
-    timer.innerHTML = 60;
+    scoreText.innerHTML = "0";
+    const yourScore = document.querySelector(".your-score");
+    yourScore.innerHTML = "";
+
+
 
     x = 475;
 
-    let i = 60;
+    let i = 10;
     let stopTimer = setInterval(()=>{
         i--;
         timer.innerHTML = `${i}`;
@@ -25,6 +29,7 @@ startButton.addEventListener("click", ()=>{
             clearInterval(stopTimer);
             startButton.style.display = "initial";
             vx = 0;
+            showScore();
         }
     }, 1000)
 });
@@ -87,6 +92,7 @@ spawnBlock();
 function checkIfPlayerTouch(xBlock, yBlock, blockElement, blockInterval, boost){
     if(yBlock + POINT_HEIGHT >= y && yBlock <= y + PLAYER_HEIGHT){
         if(xBlock + POINT_WIDTH >= x && xBlock <= x + PLAYER_WIDTH){
+            sound.play();
             blockElement.remove();
             clearInterval(blockInterval);
             score++;
@@ -107,6 +113,11 @@ function checkIfPlayerTouch(xBlock, yBlock, blockElement, blockInterval, boost){
         }
     }
 }
+
+function showScore(){
+    const yourScore = document.querySelector(".your-score");
+    yourScore.innerHTML = `your score is ${score}`;
+};
 
 function blockCollision(yBlock, vyBlock){
     if(yBlock >= canvas.height - 45){

@@ -6,7 +6,8 @@ body {
 .overlay-background,
 .overlay-board,
 .overlay-canvas,
-.overlay-start {
+.overlay-start,
+.overlay-score {
     position: absolute;
     display: flex;
     align-items: center;
@@ -16,6 +17,12 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
+}
+
+.your-score {
+    transform: translateY(300px);
+    font-size: 45px;
+    color:rgb(175, 175, 175);
 }
 
 .game-text {
