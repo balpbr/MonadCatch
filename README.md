@@ -1,1 +1,1 @@
-the game is under development
+__A simple browser game about Redstone Oracles__
